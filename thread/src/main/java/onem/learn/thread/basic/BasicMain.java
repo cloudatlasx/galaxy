@@ -17,7 +17,7 @@ public class BasicMain {
     public static void main(String[] args) throws Exception {
         Thread thread = new ThreadDemo();
         thread.start();
-        Thread runnable = new Thread(new RunnableDemo());
+        Thread runnable = new Thread(new RunnableDemo("1", "2"));
         runnable.start();
         FutureTask<String> futureTask = new FutureTask(new CallableDemo());
         Thread callable = new Thread(futureTask);
