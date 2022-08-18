@@ -24,12 +24,17 @@ public class TestController {
     @Qualifier("task")
     private Executor executor;
 
+    @Autowired
+    private ThreadHelper threadHelper;
+
     @GetMapping("/hello")
     public String hello() {
         log.info("hello");
         executor.execute(() -> {
             log.info("hello execute");
         });
-        return "hello spring";
+        String threadName = threadHelper.getThreadName();
+        log.info("thread name: {}", threadName);
+        return "hello spring " + threadName;
     }
 }
