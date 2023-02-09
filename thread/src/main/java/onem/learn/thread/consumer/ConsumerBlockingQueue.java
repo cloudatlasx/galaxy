@@ -11,16 +11,18 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Date 2022/6/24
  * @Version V1.0
  */
-public class ConsumerBlockingQueue <E> {
+public class ConsumerBlockingQueue<E> {
     private Queue<E> queue;
     private int capacity;
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition PROVIDER = lock.newCondition();
     private final Condition CONSUMER = lock.newCondition();
-    public ConsumerBlockingQueue (int capacity) {
+
+    public ConsumerBlockingQueue(int capacity) {
         this.capacity = capacity;
         this.queue = new LinkedList<>();
     }
+
     public void put(E e) throws InterruptedException {
         lock.lock();
         try {

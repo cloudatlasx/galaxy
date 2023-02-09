@@ -29,8 +29,8 @@ public class SpringSecurityConfig {
 
     private final String LOGIN_URL = "/login";
     private final String[] PERMIT_ALL = {Constants.SpringSecurity.LOGIN_PAGE,
-                                        Constants.SpringSecurity.AUTHENTICATION,
-                                        "/css/**", "/code/image", "/code/sms"};
+            Constants.SpringSecurity.AUTHENTICATION,
+            "/css/**", "/code/image", "/code/sms"};
     @Autowired
     private MyAuthenticationSuccessHandler authenticationSuccessHandler;
     @Autowired

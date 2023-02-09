@@ -26,10 +26,10 @@ public class BasicMain {
         System.out.println(futureTask.get());
         Future future = CompletableFuture.completedFuture("1");
         CompletableFuture.supplyAsync(() -> "x"
-        ).thenAccept(result ->  log.info(result)
+        ).thenAccept(result -> log.info(result)
         ).exceptionally(e -> {
-           e.printStackTrace();
-           return null;
+            e.printStackTrace();
+            return null;
         });
         CompletableFuture.supplyAsync(() -> {
             log.info("running supplyAsync");

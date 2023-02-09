@@ -13,7 +13,9 @@ import java.util.Objects;
  * @Version V1.0
  */
 public class ThreadVariableUtils {
-    private ThreadVariableUtils() {}
+    private ThreadVariableUtils() {
+    }
+
     private static final ThreadLocal<Map<String, String>> MAP_THREAD_LOCAL = new ThreadLocal();
 
     public static void put(String k, String v) {

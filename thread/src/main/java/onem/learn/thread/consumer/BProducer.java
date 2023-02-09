@@ -11,12 +11,13 @@ import java.util.concurrent.TimeUnit;
  * @Version V1.0
  */
 @Slf4j
-public class BProducer implements Runnable{
+public class BProducer implements Runnable {
     private ConsumerBlockingQueue<Food> queue;
 
     public BProducer(ConsumerBlockingQueue<Food> queue) {
         this.queue = queue;
     }
+
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
@@ -24,7 +25,7 @@ public class BProducer implements Runnable{
                 if (i == 2 || i == 8) {
                     TimeUnit.SECONDS.sleep(5L);
                 }
-                Food f = new Food("食物"+i);
+                Food f = new Food("食物" + i);
                 log.info("生产：" + f.toString());
                 queue.put(f);
                 TimeUnit.MILLISECONDS.sleep(300L);

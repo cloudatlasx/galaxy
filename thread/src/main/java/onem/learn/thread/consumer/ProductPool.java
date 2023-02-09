@@ -12,7 +12,7 @@ import java.util.concurrent.BlockingQueue;
 public class ProductPool<E> {
     private BlockingQueue<E> pool;
 
-    public ProductPool (int size) {
+    public ProductPool(int size) {
         pool = new ArrayBlockingQueue<>(size);
     }
 

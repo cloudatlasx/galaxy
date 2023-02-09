@@ -37,7 +37,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         if (StringUtils.endsWithIgnoreCase("/login", request.getRequestURI())
-            && StringUtils.equalsIgnoreCase(request.getMethod(), "post")) {
+                && StringUtils.equalsIgnoreCase(request.getMethod(), "post")) {
             try {
                 validateCode(new ServletWebRequest(request));
             } catch (ValidateCodeException e) {
@@ -47,6 +47,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request, response);
     }
+
     private void validateCode(ServletWebRequest servletWebRequest) throws ServletRequestBindingException {
         ImageCode codeInSession = (ImageCode) sessionStrategy.getAttribute(servletWebRequest, ValidateController.SESSION_KEY_IMAGE_CODE);
         String codeInRequest = ServletRequestUtils.getStringParameter(servletWebRequest.getRequest(), "imageCode");

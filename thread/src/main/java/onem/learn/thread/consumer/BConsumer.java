@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @Version V1.0
  */
 @Slf4j
-public class BConsumer<E> implements Runnable{
+public class BConsumer<E> implements Runnable {
 
     private ConsumerBlockingQueue<E> queue;
 

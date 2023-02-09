@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 public class SmsCode {
     private String code;
     private LocalDateTime expireTime;
+
     public SmsCode(String code, int expireIn) {
         this.code = code;
         this.expireTime = LocalDateTime.now().plusSeconds(expireIn);

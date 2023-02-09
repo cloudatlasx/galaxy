@@ -47,8 +47,6 @@ public class ValidateController {
         log.info("您的登录验证码为：" + smsCode.getCode() + "，有效时间为60秒");
     }
 
-
-
     private SmsCode createSMSCode() {
         String code = RandomStringUtils.randomNumeric(6);
         return new SmsCode(code, 60);

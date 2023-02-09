@@ -16,5 +16,4 @@ public class ValidateCodeException extends AuthenticationException {
         super(explanation);
     }
 
-
 }

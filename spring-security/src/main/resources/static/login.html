@@ -22,24 +22,26 @@
             <button type="submit">登录</button>
         </div>
     </form>-->
-    <form class="login-page" action="/login/mobile" method="post">
-        <div class="form">
-            <h3>短信验证码登录</h3>
-            <input type="text" placeholder="手机号" name="mobile" value="17777777777" required="required"/>
-            <span style="display: inline">
+<form class="login-page" action="/login/mobile" method="post">
+    <div class="form">
+        <h3>短信验证码登录</h3>
+        <input type="text" placeholder="手机号" name="mobile" value="17777777777" required="required"/>
+        <span style="display: inline">
                 <input type="text" name="smsCode" placeholder="短信验证码" style="width: 50%;"/>
-                <button type="button" id = "sms">发送验证码</button>
+                <button type="button" id="sms">发送验证码</button>
             </span>
-            <button type="submit">登录</button>
-        </div>
-    </form>
+        <button type="submit">登录</button>
+    </div>
+</form>
 
-    <script>
-        $("#sms").click(function(){
-            $.ajax({url:"/code/sms?mobile=17777777777",success:function(result){
-                    alert("验证码已发送");
-                }});
+<script>
+    $("#sms").click(function () {
+        $.ajax({
+            url: "/code/sms?mobile=17777777777", success: function (result) {
+                alert("验证码已发送");
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>

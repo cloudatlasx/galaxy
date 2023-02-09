@@ -18,12 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SmsAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
-
     public static final String MOBILE_KEY = "mobile";
 
     private String mobileParameter = MOBILE_KEY;
     private boolean postOnly = true;
-
 
     public SmsAuthenticationFilter() {
         super(new AntPathRequestMatcher("/login/mobile", "POST"));

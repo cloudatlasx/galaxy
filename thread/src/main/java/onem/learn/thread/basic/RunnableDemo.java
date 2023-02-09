@@ -9,10 +9,12 @@ package onem.learn.thread.basic;
 public class RunnableDemo implements Runnable {
     String x;
     String y;
-    public RunnableDemo (String x, String y) {
+
+    public RunnableDemo(String x, String y) {
         this.x = x;
         this.y = y;
     }
+
     @Override
     public void run() {
         System.out.println("x:" + x);
