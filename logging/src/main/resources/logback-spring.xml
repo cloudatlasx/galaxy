@@ -3,7 +3,7 @@
 <configuration scan="true" scanPeriod="1s">
 
 
-    <springProperty scope="context" name="CONTEXT_NAME" source="spring.application.name" defaultValue=""/>
+    <springProperty scope="context" name="logging.file.name" source="spring.application.name" defaultValue=""/>
     <springProperty scope="context" name="logging.file.path" source="logging.file.path" defaultValue="./logs"/>
     <springProperty scope="context" name="logging.file.max-size" source="logging.file.max-size" defaultValue="200MB"/>
     <springProperty scope="context" name="logging.file.max-history" source="logging.file.max-history" defaultValue="2880"/>
@@ -43,9 +43,9 @@
 
     <!-- 运行日志文件 ${logging.level}及以上的级别 -->
     <appender name="FILE-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${logging.file.path}/${CONTEXT_NAME}-all-info.log</file>
+        <file>${logging.file.path}/${logging.file.name}-all-info.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${logging.file.path}/archives/${CONTEXT_NAME}-info.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <fileNamePattern>${logging.file.path}/archives/${logging.file.name}-info.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
             <maxFileSize>${logging.file.max-size}</maxFileSize>
             <maxHistory>${logging.file.max-history}</maxHistory>
         </rollingPolicy>
@@ -58,7 +58,7 @@
     </appender>
 
     <appender name="FILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${logging.file.path}/${CONTEXT_NAME}-all-error.log</file>
+        <file>${logging.file.path}/${logging.file.name}-all-error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${logging.file.path}/archives/error.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
             <maxFileSize>${logging.file.max-size}</maxFileSize>
