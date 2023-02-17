@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="onem.learn.logging.api.mapper.UserMapper">
+
+    <select id="getUserByLoginName" resultType="onem.learn.logging.api.entity.User">
+        select login_name, real_name, creation_date from hzero_platform.iam_user where login_name = #{loginName} limit 1
+    </select>
+</mapper>

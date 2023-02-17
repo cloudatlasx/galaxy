@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: spring-boot-admin-client
+  boot:
+    admin:
+      client:
+        url: http://localhost:9003
+server:
+  port: 9004
+
+logging:
+  file:
+    level: debug
+    path: "F:/logs/admin-client"
+    name: "F:/logs/admin-client/all-info.log"
+  level:
+    org.springframework.boot.autoconfigure: error
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true
+  endpoint:
+    health:
+      show-details: ALWAYS
+    # 日志记录
+#    logfile:
+#      external-file: F:/logs/admin-client/all-info.log

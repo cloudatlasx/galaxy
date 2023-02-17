@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: learn-logging
+  security:
+    user:
+      name: admin
+      password: admin
+  thread-pool:
+    core-pool-size: 20
+    max-pool-size: 50
+    queue-capacity: 1000
+    keep-alive-seconds: 30
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db.hzero.org:7004/halm_atn?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true}
+    username: ${SPRING_DATASOURCE_USERNAME:lxzl_alm}
+    password: ${SPRING_DATASOURCE_PASSWORD:lxzl_alm*#2020}
+server:
+  port: 9003
+
+logging:
+  file:
+    level: debug
+    path: "F:/logs/logging"
+  level:
+    org.springframework.boot.autoconfigure: error
+
+mybatis:
+  mapperLocations:
+    - classpath*:/mapper/*Mapper.xml
+    - classpath*:/mapper/*/*Mapper.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
