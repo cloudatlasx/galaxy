@@ -11,8 +11,8 @@ server:
 logging:
   file:
     level: debug
-    path: "F:/logs/admin-client"
-    name: "F:/logs/admin-client/all-info.log"
+    path: "E:/logs/admin-client"
+    name: "E:/logs/admin-client/all-info.log"
   level:
     org.springframework.boot.autoconfigure: error
 

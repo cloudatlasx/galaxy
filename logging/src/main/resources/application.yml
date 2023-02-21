@@ -15,13 +15,17 @@ spring:
     url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db.hzero.org:7004/halm_atn?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true}
     username: ${SPRING_DATASOURCE_USERNAME:lxzl_alm}
     password: ${SPRING_DATASOURCE_PASSWORD:lxzl_alm*#2020}
+  boot:
+    admin:
+      ui:
+        log-viewer: true # GTP 说这个可以读取控制台日志，但是并没有效果
 server:
   port: 9003
 
 logging:
   file:
     level: debug
-    path: "F:/logs/logging"
+    path: "E:/logs/logging"
   level:
     org.springframework.boot.autoconfigure: error
 
