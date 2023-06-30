@@ -1,4 +1,4 @@
-package onem.learn.javasample;
+package onem.learn.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package onem.learn.javasample.sample;
+package onem.learn.sample.sample;
 
 import java.util.HashMap;
 import java.util.Map;

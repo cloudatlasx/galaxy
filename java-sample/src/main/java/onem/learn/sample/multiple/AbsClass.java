@@ -1,4 +1,4 @@
-package onem.learn.javasample.multiple;
+package onem.learn.sample.multiple;
 
 import lombok.Data;
 

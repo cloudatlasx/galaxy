@@ -26,12 +26,14 @@ public class ConsumerBlockingQueue<E> {
     public void put(E e) throws InterruptedException {
         lock.lock();
         try {
+            System.out.println("put");
             if (queue.size() == capacity) {
                 PROVIDER.await();
             }
             queue.add(e);
             CONSUMER.signalAll();
         } finally {
+            System.out.println("put unlocked");
             lock.unlock();
         }
     }
@@ -39,6 +41,7 @@ public class ConsumerBlockingQueue<E> {
     public E take() throws InterruptedException {
         lock.lock();
         try {
+            System.out.println("take");
             if (queue.size() == 0) {
                 CONSUMER.await();
             }
@@ -46,6 +49,7 @@ public class ConsumerBlockingQueue<E> {
             PROVIDER.signalAll();
             return e;
         } finally {
+            System.out.println("take unlocked");
             lock.unlock();
         }
     }

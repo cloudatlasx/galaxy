@@ -1,6 +1,6 @@
-package onem.learn.javasample;
+package onem.learn.sample;
 
-import onem.learn.javasample.multiple.AbsClass;
+import onem.learn.sample.multiple.AbsClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,7 @@
-package onem.learn.javasample.multiple.impl;
+package onem.learn.sample.multiple.impl;
 
-import onem.learn.javasample.multiple.AbsClass;
-import onem.learn.javasample.multiple.Slot;
+import onem.learn.sample.multiple.AbsClass;
+import onem.learn.sample.multiple.Slot;
 import org.springframework.stereotype.Service;
 
 /**

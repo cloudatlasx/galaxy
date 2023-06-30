@@ -28,7 +28,7 @@ public class BProducer implements Runnable {
                 Food f = new Food("食物" + i);
                 log.info("生产：" + f.toString());
                 queue.put(f);
-                TimeUnit.MILLISECONDS.sleep(300L);
+                TimeUnit.SECONDS.sleep(1L);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
