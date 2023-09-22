@@ -1,5 +1,6 @@
 package onem.learn.sample;
 
+import lombok.extern.slf4j.Slf4j;
 import onem.learn.sample.multiple.AbsClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @SpringBootTest
+@Slf4j
 class JavaSampleApplicationTests {
 
     @Autowired
@@ -28,6 +30,16 @@ class JavaSampleApplicationTests {
                         .thenComparing((AbsClass e) -> e.slot.order)
         ).collect(Collectors.toList());
         absList.forEach(e -> e.apply());
+    }
+
+    @Test
+    public void exceptionTest() {
+        try {
+            new Thread(() -> {absList.get(0).getException();} ).start();
+        } catch (Exception e) {
+            log.error("Exception", e);
+        }
+        absList.get(0).getException();
     }
 
 }

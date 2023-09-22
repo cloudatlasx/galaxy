@@ -19,7 +19,8 @@
         <module>spring-security</module>  <!-- port: 9001 -->
         <module>thread</module>  <!-- port: 9002 -->
         <module>logging</module> <!-- port: 9003 -->
-        <module>spring-boot-admin-client</module> <!-- port: 9004 -->
+        <module>spring-boot-admin-client</module>
+        <module>algorithm</module> <!-- port: 9004 -->
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

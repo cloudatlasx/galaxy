@@ -13,4 +13,5 @@ public abstract class AbsClass {
     public Slot slot;
 
     public abstract void apply();
+    public abstract int getException();
 }

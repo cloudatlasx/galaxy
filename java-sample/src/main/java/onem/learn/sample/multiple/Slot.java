@@ -9,4 +9,8 @@ package onem.learn.sample.multiple;
 public class Slot {
     public int order;
     public boolean forced;
+
+    public int getException() {
+        return 1 / 0;
+    }
 }

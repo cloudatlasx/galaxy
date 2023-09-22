@@ -24,4 +24,9 @@ public class Abs1 extends AbsClass {
         System.out.println("打印ABS1 ORDER：" + slot.order + " FORCED：" + slot.forced);
     }
 
+    @Override
+    public int getException() {
+        return 1/0;
+    }
+
 }
