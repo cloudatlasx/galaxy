@@ -1,8 +1,8 @@
 package onem.learn.gc;
 
+import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,10 +14,9 @@ import java.util.List;
 @Slf4j
 public class GcMain {
     public static void main(String[] args) {
-        List<Byte[]> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            log.info("i: " + i);
-            list.add(new Byte[1024 * 1024]);
-        }
+        List<Byte[]> smaller = Runner.getSmaller();
+        log.info("smaller size: {}", ObjectSizeCalculator.getObjectSize(smaller));
+        List<Byte[]> bigger = Runner.getBigger();
+        log.info("bigger size: {}", ObjectSizeCalculator.getObjectSize(bigger));
     }
 }
