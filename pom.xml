@@ -21,7 +21,7 @@
         <module>logging</module> <!-- port: 9003 -->
         <module>spring-boot-admin-client</module>
         <module>algorithm</module> <!-- port: 9004 -->
-        <module>skywalking-demo</module> <!-- port: 9004 -->
+        <module>skywalking-demo</module> <!-- port: 9005 -->
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
